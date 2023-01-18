@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {%block content%}
+<h1 align="center">Welcome to Go Pump</h1>
+
+<h1 class="logo">Go Pump</h1>
+<nav>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How it Works</a></li>
+    <li><a href="#FAQ">FAQ</a></li>
+    <li><a href="#order">Order Now</a></li>
+  </ul>
+</nav>
+</header>
+<section id="hero">
+<img src="go-pump-hero.jpg" alt="Go Pump on a car tire">
+<h2>The Ultimate Tire Pump</h2>
+<p>Never worry about getting stranded with a flat tire again! Go Pump is the ultimate tire pump that attaches to your car and can pump your tires at any time. It also checks for leaks, so you can catch them before they become a problem.</p>
+<a href="#order" class="cta-btn">Order Now</a>
+</section>
+<section id="features">
+<h2>Features</h2>
+<div class="row">
+  <div class="col">
+    <img src="go-pump-feature-1.jpg" alt="Go Pump attached to car">
+    <h3>Attaches to your car</h3>
+    <p>Go Pump attaches to your car for easy access, making it convenient to use.</p>
+  </div>
+  <div class="col">
+    <img src="go-pump-feature-2.jpg" alt="Go Pump pumping tire">
+    <h3>Pumps your tires at any time</h3>
+    <p>Go Pump can pump your tires at any time, ensuring that you're always ready to hit the road.</p>
+  </div>
+  <div class="col">
+    <img src="go-pump-feature-3.jpg" alt="Go Pump detecting leaks">
+    <h3>Checks for leaks</h3>
+    <p>Go Pump checks for leaks and alerts you when a problem is detected, keeping you safe on the road.</p>
+  </div>
+</div>
+</section>
+<section id="how-it-works">
+<h2>How it Works</h2>
+<img src="go-pump-diagram.jpg" alt="Go Pump diagram">
+<p>Go Pump attaches to your car and is powered by the cigarette lighter socket. Simply connect the pump to your tire, press the button, and let Go Pump do the rest. The built-in pressure gauge ensures that your tire is always at the correct pressure, and the leak detection system alerts you if there is a problem.</p>
+</section>
+<section id="FAQ">
+<h2>Frequently Asked Questions</h2>
+<ul>
+    <li>
+        <h3>How do I install Go Pump?</h3>
+        <p>Installation is easy. Simply attach Go Pump to your car and plug it into the cigarette lighter socket.</p>
+      </li>
+      <li>
+        <h3>Can Go Pump be used on all types of tires?</h3>
+        <p>Yes, Go Pump can be used on all types of tires, including cars, trucks, and motorcycles.</p>
+      </li>
+      <li>
+        <h3>How do I check for leaks?</h3>
+        <p>Go Pump has a built-in leak detection system that alerts you if there is a problem. Simply turn on Go Pump and it will automatically check for leaks.</p>
+      </li>
+      <li>
+        <h3>What is the warranty for Go Pump?</h3>
+        <p>Go Pump comes with a 1-year warranty. If you have any issues with your Go Pump, please contact us for assistance.</p>
+      </li>
+      </ul>
+      </section>
+      <section id="order">
+        <h2>Order Now</h2>
+        <p>Don't wait any longer, order your Go Pump today and never worry about getting stranded with a flat tire again!</p>
+        <form action="order-process.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"><br>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address"><br>
+          <input type="submit" value="Place Order">
+        </form>
+      </section>
+      <footer>
+        <p>Copyright ©2022 Go Pump</p>
+      </footer>
+
+  
+{%endblock%}
