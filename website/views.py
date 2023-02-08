@@ -14,7 +14,7 @@ def my_tire():
         psi =  request.form.get('psi')
         temperature = request.form.get('temperature')
         
-        if psi < 1:
+        if psi < 0:
             flash('Pressure Cannot Be Negative', category='error')
         else:
             new_pressure = Pressure(psi=psi, temperture=temperature, user_id=current_user.id)
