@@ -1,3 +1,93 @@
 {% extends "base.html" %} {% block title %}About Us{% endblock %} {%block content%}
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us - Portable Pump</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<main>
+		<section>
+			<h1>About Us</h1>
+			<p>Welcome to Portable Pump, your go-to source for affordable and high-quality portable pumps. We're dedicated to providing you the best pumping experience with a focus on dependability, customer service, and affordability.</p>
+		</section>
+		
+		<section>
+            <h2>Our Founders</h2>
+            <ul>
+                <li>
+                    <div class="founder">
+                        <img src="{{ url_for('static', filename='rich.jpg') }}" alt="Picture of Rich" width="300">
+                        <span>Rich</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="founder">
+                        <img src="{{ url_for('static', filename='ajani.jpg') }}" alt="Picture of Ajani" width="300">
+                        <span>Ajani</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="founder">
+                        <img src="{{ url_for('static', filename='dejon.jpg') }}" alt="Picture of Dejon" width="300">
+                        <span>Dejon</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="founder">
+                        <img src="{{ url_for('static', filename='terrell.jpg') }}" alt="Picture of Terrell" width="300">
+                        <span>Terrell</span>
+                    </div>
+                </li>
+            </ul>
+            <p>Our team of four passionate founders started this company with the goal of making portable pumps accessible and affordable for everyone. With our years of experience in the industry, we're confident in our ability to deliver reliable products that exceed your expectations.</p>
+        </section>
+        <style>
+            .founder {
+                position: relative;
+                display: inline-block;
+            }
+        
+            .founder span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #000;
+                color: #fff;
+                padding: 10px;
+                opacity: 0.7;
+                font-size: 18px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+        
+            .founder img {
+                display: block;
+                max-width: 100%;
+            }
+        </style>
+        
+        
+
+        <section>
+			<h3>Contact Us</h3>
+			<p>You can find us on Instagram @GOPUMP or email us at: gopump@gmail.com</p>
+		</section>
+	</main>
+	
+	<footer>
+		<p>&copy; 2023 Go Pump. All rights reserved.</p>
+	</footer>
+	
+</body>
+</html>
+
+
+
 {% endblock %}
+
