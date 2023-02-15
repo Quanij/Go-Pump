@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {%block content%}
 <h1 align="center">Welcome to Go Pump</h1>
 
-<h1 class="logo">Go Pump</h1>
 <nav>
   <ul>
     <li><a href="#features">Features</a></li>
@@ -12,36 +11,39 @@
 </nav>
 </header>
 <section id="hero">
-<img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump on a car tire">
+<img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump on a car tire" style='width: 400px'>
 <h2>The Ultimate Tire Pump</h2>
 <p>Never worry about getting stranded with a flat tire again! Go Pump is the ultimate tire pump that attaches to your car and can pump your tires at any time. It also checks for leaks, so you can catch them before they become a problem.</p>
 <a href="#order" class="cta-btn">Order Now</a>
 </section>
+<br>
 <section id="features">
 <h2>Features</h2>
 <div class="row">
   <div class="col">
-    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump attached to car">
+    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump attached to car" style='width: 400px'>
     <h3>Attaches to your car</h3>
     <p>Go Pump attaches to your car for easy access, making it convenient to use.</p>
   </div>
   <div class="col">
-    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump pumping tire">
+    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump pumping tire" style='width: 400px'>
     <h3>Pumps your tires at any time</h3>
     <p>Go Pump can pump your tires at any time, ensuring that you're always ready to hit the road.</p>
   </div>
   <div class="col">
-    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump detecting leaks">
+    <img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump detecting leaks" style='width: 400px'>
     <h3>Checks for leaks</h3>
     <p>Go Pump checks for leaks and alerts you when a problem is detected, keeping you safe on the road.</p>
   </div>
 </div>
 </section>
+<br>
 <section id="how-it-works">
 <h2>How it Works</h2>
-<img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump diagram">
+<img src="{{ url_for('static', filename='go-pump-hero.jpg') }}" alt="Go Pump diagram" style='width: 400px'>
 <p>Go Pump attaches to your car and is powered by the cigarette lighter socket. Simply connect the pump to your tire, press the button, and let Go Pump do the rest. The built-in pressure gauge ensures that your tire is always at the correct pressure, and the leak detection system alerts you if there is a problem.</p>
 </section>
+<br>
 <section id="FAQ">
 <h2>Frequently Asked Questions</h2>
 <ul>
@@ -63,6 +65,7 @@
       </li>
       </ul>
       </section>
+      <br>
       <section id="order">
         <h2>Order Now</h2>
         <p>Don't wait any longer, order your Go Pump today and never worry about getting stranded with a flat tire again!</p>
