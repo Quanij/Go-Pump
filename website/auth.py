@@ -63,3 +63,51 @@ def sign_up():
             return redirect(url_for('views.home'))
           
     return render_template("sign_up.html", user=current_user)
+
+@auth.route('/forgot-password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        user = User.query.filter_by(email=email).first()
+        if user:
+            ## print(email)
+            return redirect(url_for('auth.reset_password', email=email)) 
+        else:
+            flash('Email doesn\'t.', category='error')
+    return render_template("forgot_password.html", user=current_user)
+
+@auth.route('/reset-password', methods=['GET', 'POST'])
+def reset_password():
+    email = request.args.get('email')
+    ## print('email:', email) # Debug statement
+    user = User.query.filter_by(email=email).first()
+    ## print(type(user))
+    ## print(user.password)
+    if request.method == 'POST':
+        # Retrieve the user's new password from the form data
+        new_password = request.form.get('new_password')
+        confirm_password = request.form.get('confirm_password')
+
+        if new_password != confirm_password:
+            flash('Passwords don\'t match', category='error')
+        elif len(new_password) < 7:
+            flash('Email must be atleast 7 character', category='error')
+        else:
+            # Hash the new password
+            hashed_password = generate_password_hash(new_password, method='sha256')
+
+            # Update the user's password in the database
+            user.password = hashed_password
+            ## print('password new:',user.password)
+            try:
+                db.session.commit()
+            except Exception as e:
+                print(e)
+
+            flash('Your password has been updated!', category='success')
+            # Redirect the user to the login page
+            return redirect(url_for('auth.login')) 
+
+    # If the request method is GET, render the reset password form
+    return render_template('reset_password.html', user=current_user)
+

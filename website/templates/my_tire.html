@@ -1,24 +1,5 @@
 {% extends "base.html" %} {% block title %}My Tire{% endblock %} {%block content%}
 <h1 align="center">Go Pump Tire Pressures</h1>
-<ul class="list-group list-group-flush" id ="pressures">
-    {% for pressure in user.pressures %}
-    <li class="list-group-item">{{ pressure.psi }}
-        <button type="button" class="close" onClick="deletePressure({{ pressure.id }})">
-            <span aria-hidden="true">&times;</span>
-    </li>
-    {% endfor %}
-</ul>
 
-<form>
-    <label for="psi">Enter PSI:</label>
-    <input type="number" id="psi" name="psi"><br>
-  
-    <label for="temperature">Enter Temperature:</label>
-    <input type="number" id="temperature" name="temperature"><br>
-  
-    <div align="center">
-        <button type="submit" class="btn btn-primary">Add Tire Pressure</button>
-    </div>
-  </form>
   
 {%endblock%}

@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, redirect, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Pressure
+from .models import Pressure, User
 from . import db
 import json
+
 
 views = Blueprint('views', __name__)
 
@@ -34,14 +35,3 @@ def home():
 def about_us():
     return render_template("about_us.html", user=current_user)
 
-
-@views.route('/delete-pressure', methods=['POST'])
-def delete_note():
-    pressure = json.loads(request.data)
-    pressureId = pressure['pressureId']
-    pressure = Pressure.query.get(pressureId)
-    if pressure:
-        if pressure.user_id == current_user.id:
-            db.session.delete(pressure)
-            db.session.commit()
-    return jsonify({})
