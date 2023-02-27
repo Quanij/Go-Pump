@@ -1,5 +1,22 @@
-{% extends "base.html" %} {% block title %}My Tire{% endblock %} {%block content%}
-<h1 align="center">Go Pump Tire Pressures</h1>
-
+{% extends "base.html" %} {% block title %}My Tire Pressure{% endblock %} {%block content%}
+<h1 align="center">Tire Pressure Data</h1>
+<table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>PSI</th>
+        <th>Temperature</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td>{{ item.date.strftime('%m/%d/%Y %H:%M:%S') }}</td>
+        <td>{{ item.psi }}</td>
+        <td>{{ item.temperature }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
 {%endblock%}

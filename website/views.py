@@ -11,20 +11,9 @@ views = Blueprint('views', __name__)
 @views.route('/my-tire', methods=['GET', 'POST'])
 @login_required
 def my_tire():
-    if request.method == 'POST':
-        psi =  request.form.get('psi')
-        temperature = request.form.get('temperature')
-        
-        if psi < 0:
-            flash('Pressure Cannot Be Negative', category='error')
-        else:
-            new_pressure = Pressure(psi=psi, temperture=temperature, user_id=current_user.id)
-            db.session.add(new_pressure)
-            db.session.commit()
-            flash('Tire Pressure Added!', category='success')
-    
-    return render_template("my_tire.html", user=current_user)
-
+    # Get all the pressure data from the database
+    data = Pressure.query.filter_by(user_id=current_user.id).all()
+    return render_template('my_tire.html', data=data, user=current_user)
 
 @views.route('/', methods=['GET', 'POST'])
 def home():
